@@ -41,7 +41,7 @@ def line_tracking(p_des, p_prev, p_now):
     
     return gamma_cmd, psi_cmd
 
-def fcn(target_info, vel_ctrl_type, mode, my_info, velocity_des, velocity_corner, continuous_turn):
+def cmd(target_info, vel_ctrl_type, mode, my_info, velocity_des, velocity_corner):
     global flag_emergency, des_phi
     if 'flag_emergency' not in globals():
         flag_emergency = 0
