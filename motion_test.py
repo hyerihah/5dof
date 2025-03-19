@@ -72,7 +72,7 @@ while timer < T_sim:
     [Position_t, Vel_ctrl_type] = call_Lag_Pursuit(StatesR, StatesB, 600)
     [vel_cmd, gamma_cmd, psi_cmd, mode_lat] = cmd(StatesR, Vel_ctrl_type, 101, StatesB, StatesB[4], 330)
     cmd = [vel_cmd, gamma_cmd, psi_cmd]
-    [TCmd, AlphaCmd, PhiCmd, Flit_Alt_Cmd, Flit_Psi_Cmd, Err_Alt_I] = Controller(StatesB, cmd, dt, Flit_Alt_Cmd, Flit_Psi_Cmd, Err_Alt_I)
+    [TCmd, AlphaCmd, PhiCmd,] = Controller(StatesB, cmd, dt)
 
     uB = [TCmd, AlphaCmd, PhiCmd]
 

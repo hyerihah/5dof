@@ -1,11 +1,11 @@
 import math
 import numpy as np
 
-from Aircraft_parm import Aircraft_parm
-from AeroDynamic import AeroForce
-from Cal_Density import CalDensity
-from Gravity_Force import GravityForce
-from R_Earth import REarth
+from model.Aircraft_parm import Aircraft_parm
+from model.AeroDynamic import AeroForce
+from model.Cal_Density import CalDensity
+from model.Gravity_Force import GravityForce
+from model.R_Earth import REarth
 
 
 def RK4thOrder(init_states, u, dt):

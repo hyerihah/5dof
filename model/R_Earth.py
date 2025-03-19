@@ -1,4 +1,4 @@
-from Aircraft_parm import Aircraft_parm
+from model.Aircraft_parm import Aircraft_parm
 import numpy as np
 import math
 
