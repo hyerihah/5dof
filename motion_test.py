@@ -66,13 +66,22 @@ u = [StatesB[3], StatesB[1], StatesB[2]]
 sB_history = [StatesB.copy()]  # 초기 상태 저장
 sR_history = [StatesR.copy()]  # 초기 상태 저장
 
+Flit_Alt_CmdB = StatesB[9]
+Flit_Psi_CmdB = StatesB[6]
+Err_Alt_IB = 0
+
+
+
 # Simulation Loop
 while timer < T_sim:
+    
+    #2025.03.20
+    ## TARGET_INFO랑, MY_INFO 매트랩이랑 파이썬 안맞음 맞춰 줘야함!
 
     [Position_t, Vel_ctrl_type] = call_Lag_Pursuit(StatesR, StatesB, 600)
     [vel_cmd, gamma_cmd, psi_cmd, mode_lat] = cmd(StatesR, Vel_ctrl_type, 101, StatesB, StatesB[4], 330)
     cmd = [vel_cmd, gamma_cmd, psi_cmd]
-    [TCmd, AlphaCmd, PhiCmd,] = Controller(StatesB, cmd, dt)
+    [TCmd, AlphaCmd, PhiCmd,Flit_Alt_CmdB, Flit_Psi_CmdB, Err_Alt_IB] = Controller(StatesB, cmd, dt, Flit_Alt_CmdB, Flit_Psi_CmdB, Err_Alt_IB)
 
     uB = [TCmd, AlphaCmd, PhiCmd]
 
